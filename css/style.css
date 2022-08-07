@@ -73,7 +73,7 @@ body {
   gap: 0px;
   width: 100%;
   height: 100%;
-  padding: 8px;
+  padding: 0 8px;
   overflow: scroll;
   /* max-width: 500px; */
 }
