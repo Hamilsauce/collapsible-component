@@ -136,7 +136,7 @@ class Collapsible {
 
   toggleActiveState(state) { this.dataset.active = state }
 
-  buttonClicked(e) { return e.path.some(t => t instanceof Element && t === this.button) }
+  buttonClicked(e) { return e.composedPath().some(t => t instanceof Element && t === this.button) }
 
   getTargetNode(e) {
     let t = e instanceof Event ? e.target : e;
@@ -181,14 +181,23 @@ window.customElements.define(
     #rootNode;
     #childElements;
 
+    #template = document.querySelector(`#root-template`).content.cloneNode(true);
+
     constructor() {
       super()
+      
+      this.self =  this.#template.querySelector('#component-container');
+      // this.style.overflow = 'hidden'
+      // this.self.style.overflow = 'hidden'
+      
 
       this.#childElements = new Map();
 
       this.attachShadow({ mode: 'open' });
 
       this.shadowRoot.innerHTML = `<style>\n${style}\n</style>`;
+
+      this.shadowRoot.append(this.self)
     }
 
     static get observedAttributes() { return ['mycoolattribute'] }
@@ -208,7 +217,8 @@ window.customElements.define(
       this.#rootNode.children = v.children;
       this.#buildTree.bind(this)(this.#rootNode);
 
-      this.shadowRoot.appendChild(this.#rootNode.self);
+      this.self.querySelector('#tree-list').appendChild(this.#rootNode.self);
+      console.log(this.self.querySelector('#tree-list').children);
     }
 
     get mycoolattribute() {

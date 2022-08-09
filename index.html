@@ -30,6 +30,23 @@
     </footer>
   </div>
 
+  <template id="root-template">
+    <div id="component-container">
+      <ul id="tree-list"></ul>
+    </div>
+    <!-- <li data-active="false" class="node">
+      <button id="" class="collapsible-button">
+        <div class="collapsible-button-content">
+          <div class="button-name"></div>
+          <div class="button-size"></div>
+        </div>
+      </button>
+      <section data-active="false" class="collapsible-content-wrapper">
+        <ul class="collapsible-content"></ul>
+      </section>
+    </li> -->
+  </template>
+
   <template id="node-template">
     <li data-active="false" class="node">
       <button id="" class="collapsible-button">
@@ -43,8 +60,8 @@
       </section>
     </li>
   </template>
-  
-  <script src="./js/CollapsibleTree.component.js"  type="module"  charset="utf-8"></script>
+
+  <script src="./js/CollapsibleTree.component.js" type="module" charset="utf-8"></script>
   <script src="./script.js" type="module" charset="utf-8"></script>
 </body>
 

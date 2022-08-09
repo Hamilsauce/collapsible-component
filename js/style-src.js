@@ -8,6 +8,10 @@ export const style = `
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
   }
+  
+  #tree-list {
+    overflow-y: scroll;
+  }
   .node {
     width: 100%;
   }
