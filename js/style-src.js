@@ -10,6 +10,8 @@ export const style = `
   }
   
   #tree-list {
+  width: 100%;
+  // height: 100%;
     overflow-y: scroll;
   }
   .node {
@@ -64,7 +66,7 @@ export const style = `
    .node[data-active=true]>.collapsible-button {
     filter: brightness(150%);
     backdrop-filter: brightness(40%);
-    text-overflow: clip;
+    text-overflow: ellipsis;
   }
   .node[data-active=true]>.collapsible-button:after {
     font-size: 20px

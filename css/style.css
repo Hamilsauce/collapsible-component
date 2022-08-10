@@ -38,9 +38,9 @@ body {
 #app-header {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+justify-content: center;
   align-items: flex-end;
-  padding: 12px 8px 0px 12px;
+  padding: 12px 8px 12px 12px;
   color: #222222;
 }
 
@@ -68,7 +68,7 @@ body {
 #main {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   gap: 0px;
   width: 100%;
